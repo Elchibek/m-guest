@@ -1,0 +1,24 @@
+{
+  "guestApp": {
+    "guestFrom": {
+      "home": {
+        "title": "Guest Froms",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Guest From",
+        "createOrEditLabel": "Создать или отредактировать Guest From",
+        "notFound": "Guest Froms не найдено"
+      },
+      "created": "Новый Guest From создан с идентификатором {{ param }}",
+      "updated": "Guest From обновлен с идентификатором {{ param }}",
+      "deleted": "Guest From удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Guest From {{ id }}?"
+      },
+      "detail": {
+        "title": "Guest From"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

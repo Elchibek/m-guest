@@ -1,0 +1,50 @@
+{
+  "guestApp": {
+    "guest": {
+      "home": {
+        "title": "Misafirler",
+        "refreshListLabel": "Güncelleme listesi",
+        "createLabel": "Yeni bir misafir oluştur",
+        "createOrEditLabel": "Konuk oluştur veya düzenle",
+        "notFound": "Misafir bulunamadı"
+      },
+      "filter": {
+        "paid": "Paralı",
+        "unpaid": "Ödenmemiş",
+        "from": "En az",
+        "before": "En çok"
+      },
+      "selectAll": "Hepsini seç",
+      "created": "Yeni misafir oluşturuldu",
+      "updated": "Misafir güncellendi",
+      "deleted": "Misafir kaldırıldı",
+      "delete": {
+        "question": "Silmek istediğine emin misin?"
+      },
+      "detail": {
+        "title": "Misafir"
+      },
+      "id": "ID",
+      "name": "İsim",
+      "guestInstitution": "Konuk kuruluşu",
+      "responsible": "Sorumlu",
+      "isArchive": "Arşiv",
+      "startDate": "Başlangıç ​​tarihi",
+      "endDate": "Bitiş tarihi",
+      "countDidntPay": "Kont ödeme yapmadı",
+      "paid": "Paralı",
+      "countPerson": "İnsanların sayısı",
+      "explanation": "Açıklama",
+      "price": "Fiyat",
+      "totalPrice": "Toplam",
+      "restOfTheDay": "Günün geri kalanı",
+      "putAway": "Bırakmak",
+      "guestBlock": "Block",
+      "entrance": "Giriş",
+      "floor": "Kat",
+      "guestHouse": "Misafirhane",
+      "guestFrom": "Misafir:",
+      "createdBy": "Yapılmış"
+    }
+  }
+}

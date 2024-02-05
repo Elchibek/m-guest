@@ -1,0 +1,28 @@
+{
+  "guestApp": {
+    "putAway": {
+      "home": {
+        "title": "Put Aways",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Put Away ekle",
+        "createOrEditLabel": "Yeni Put Away ekle veya guncelle",
+        "notFound": "Put Aways kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Put Away eklendi",
+      "updated": "{{ param }} nolu Put Away guncellendi",
+      "deleted": "{{ param }} nolu Put Away silindi",
+      "delete": {
+        "question": "{{ id }} nolu Put Away silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Put Away"
+      },
+      "id": "ID",
+      "countPerson": "Count Person",
+      "whenLeft": "When Left",
+      "isAll": "Is All",
+      "explanation": "Explanation",
+      "guest": "Guest"
+    }
+  }
+}

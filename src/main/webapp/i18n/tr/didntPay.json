@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "didntPay": {
+      "home": {
+        "title": "Didnt Pays",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Didnt Pay ekle",
+        "createOrEditLabel": "Yeni Didnt Pay ekle veya guncelle",
+        "notFound": "Didnt Pays kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Didnt Pay eklendi",
+      "updated": "{{ param }} nolu Didnt Pay guncellendi",
+      "deleted": "{{ param }} nolu Didnt Pay silindi",
+      "delete": {
+        "question": "{{ id }} nolu Didnt Pay silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Didnt Pay"
+      },
+      "id": "ID",
+      "countPerson": "Count Person",
+      "paid": "Paid",
+      "explanation": "Explanation"
+    }
+  }
+}

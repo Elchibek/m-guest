@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-guest-house-heading" data-cy="GuestHouseCreateUpdateHeading" jhiTranslate="guestApp.guestHouse.home.createOrEditLabel">
+        Create or edit a Guest House
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestHouse.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestHouse.isEmpty" for="field_isEmpty">Is Empty</label>
+          <input type="checkbox" class="form-check" name="isEmpty" id="field_isEmpty" data-cy="isEmpty" formControlName="isEmpty" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestHouse.countPerson" for="field_countPerson">Count Person</label>
+          <input
+            type="number"
+            class="form-control"
+            name="countPerson"
+            id="field_countPerson"
+            data-cy="countPerson"
+            formControlName="countPerson"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestHouse.backgroundColor" for="field_backgroundColor">Background Color</label>
+          <input
+            type="text"
+            class="form-control"
+            name="backgroundColor"
+            id="field_backgroundColor"
+            data-cy="backgroundColor"
+            formControlName="backgroundColor"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestHouse.floor" for="field_floor">Floor</label>
+          <select class="form-control" id="field_floor" data-cy="floor" name="floor" formControlName="floor" [compareWith]="compareFloor">
+            <option *ngIf="!editForm.get('floor')!.value" [ngValue]="null" selected></option>
+            <option [ngValue]="floorOption" *ngFor="let floorOption of floorsSharedCollection">{{ floorOption.id }}</option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['floor'])!.invalid && (editForm.get(['floor'])!.dirty || editForm.get(['floor'])!.touched)">
+          <small class="form-text text-danger" *ngIf="editForm.get(['floor'])?.errors?.required" jhiTranslate="entity.validation.required"
+            >This field is required.</small
+          >
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

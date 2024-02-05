@@ -1,0 +1,27 @@
+{
+  "guestApp": {
+    "floor": {
+      "home": {
+        "title": "Кабатар",
+        "refreshListLabel": "Тизмени жаңылоо",
+        "createLabel": "Жаңы кабат түзүңүз",
+        "createOrEditLabel": "Кабат түзүү же түзөтүү",
+        "notFound": "Кабат табылган жок"
+      },
+      "created": "Идентификатор менен жаңы кабат түзүлдү {{ param }}",
+      "updated": "Кабат идентификатор менен жаңыртылды {{ param }}",
+      "deleted": "Кабат идентификатор менен жок кылынат {{ param }}",
+      "delete": {
+        "question": "Floor'ду чын эле жок кылгыңыз келеби {{ id }}?"
+      },
+      "detail": {
+        "title": "Кабат"
+      },
+      "id": "ID",
+      "name": "Аты",
+      "numFloor": "Num Floor",
+      "backgroundColor": "Фон түсү",
+      "entrance": "Кире бериш"
+    }
+  }
+}

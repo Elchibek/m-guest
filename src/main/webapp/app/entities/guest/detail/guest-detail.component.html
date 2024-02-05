@@ -1,0 +1,159 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <button ngbNavLink jhiTranslate="guestApp.guest.detail.title">Guest</button>
+        <ng-template ngbNavContent>
+          <div *ngIf="guest">
+            <jhi-alert-error></jhi-alert-error>
+
+            <jhi-alert></jhi-alert>
+
+            <dl class="row-md jh-entity-details">
+              <dt><span jhiTranslate="guestApp.guest.name">Name</span></dt>
+              <dd>
+                <span>{{ guest.name }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.guestInstitution">Guest Institution</span></dt>
+              <dd>
+                <span>{{ guest.guestInstitution }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.responsible">Responsible</span></dt>
+              <dd>
+                <span>{{ guest.responsible }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.isArchive">Is Archive</span></dt>
+              <dd>
+                <span>{{ guest.isArchive }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.startDate">Start Date</span></dt>
+              <dd>
+                <span>{{ guest.startDate | formatMediumDatetime }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.endDate">End Date</span></dt>
+              <dd>
+                <span>{{ guest.endDate | formatMediumDatetime }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.countDidntPay">Count Didnt Pay</span></dt>
+              <dd>
+                <span>{{ guest.countDidntPay }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.isPaid">Paid</span></dt>
+              <dd>
+                <span>{{ guest.isPaid }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.countPerson">Count Person</span></dt>
+              <dd>
+                <span>{{ guest.countPerson }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.price">Price</span></dt>
+              <dd>
+                <span>{{ guest.price }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.totalPrice">Total Price</span></dt>
+              <dd>
+                <span>{{ guest.totalPrice }}</span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.restOfTheDay">Rest Of The Day</span></dt>
+              <dd>
+                <span *ngIf="guest.restOfTheDay"> {{ guest.num }}/{{ guest.willStay }} </span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.guestBlock">Guest Block</span></dt>
+              <dd>
+                <span *ngIf="guest.guestBlock">
+                  {{ guest.guestBlock.name }}
+                </span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.entrance">Entrance</span></dt>
+              <dd>
+                <span *ngIf="guest.entrance"> {{ guest.entrance.name }} {{ guest.entrance.numEntrance }} </span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.floor">Floor</span></dt>
+              <dd>
+                <span *ngIf="guest.floor">
+                  {{ guest.floor.numFloor }}
+                </span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.guestHouse">Guest House</span></dt>
+              <dd>
+                <span *ngIf="guest.guestHouse"> {{ guest.guestHouse.name }}{{ guest.guestHouse.name }} </span>
+              </dd>
+              <dt><span jhiTranslate="guestApp.guest.guestFrom">Guest From</span></dt>
+              <dd>
+                <span *ngIf="guest.guestFrom">
+                  {{ guest.guestFrom.name }}
+                </span>
+              </dd>
+            </dl>
+
+            <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+              <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button *ngIf="!guest.isArchive" type="button" [routerLink]="['/', guest.id, 'edit']" class="btn btn-primary">
+              <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <button ngbNavLink>Two</button>
+        <ng-template ngbNavContent>
+          <jhi-alert-error></jhi-alert-error>
+
+          <jhi-alert></jhi-alert>
+
+          <div class="alert alert-warning" id="no-result" *ngIf="guestContacts?.length === 0">
+            <span jhiTranslate="guestApp.guestContact.home.notFound">No Guest Contacts found</span>
+          </div>
+
+          <div class="table-responsive table-entities" id="entities" *ngIf="guestContacts && guestContacts.length > 0">
+            <table class="table table-striped" aria-describedby="page-heading">
+              <thead>
+                <tr jhiSort>
+                  <th scope="col">
+                    <div class="d-flex">
+                      <span jhiTranslate="global.field.id">ID</span>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="d-flex">
+                      <span jhiTranslate="guestApp.guest.name">Name</span>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="d-flex">
+                      <span>Phone</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let guestContact of guestContacts; trackBy: trackId; index as i" data-cy="entityTable">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ guestContact.name }}</td>
+                  <td>{{ guestContact.phone }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <button ngbNavLink>Three</button>
+        <ng-template ngbNavContent>
+          <p>
+            Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
+            ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at
+            faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat
+            neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est,
+            eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac
+            lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.
+          </p>
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "guestApp": {
+    "guestFrom": {
+      "home": {
+        "title": "Guest Froms",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Guest From ekle",
+        "createOrEditLabel": "Yeni Guest From ekle veya guncelle",
+        "notFound": "Guest Froms kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Guest From eklendi",
+      "updated": "{{ param }} nolu Guest From guncellendi",
+      "deleted": "{{ param }} nolu Guest From silindi",
+      "delete": {
+        "question": "{{ id }} nolu Guest From silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Guest From"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

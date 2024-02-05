@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "title": "Колдонуучунун жөндөөлөрү [ үчүн<strong>{{username}}</strong>]",
+    "form": {
+      "firstname": "Ысым",
+      "firstname.placeholder": "Сиздин атыңыз",
+      "lastname": "Акыркы аты",
+      "lastname.placeholder": "Сиздин фамилияңыз",
+      "language": "Тил",
+      "button": "Сактоо"
+    },
+    "messages": {
+      "error": {
+        "fail": "<strong>Ката кетти!</strong> Орнотуулар сакталган жок.",
+        "emailexists": "<strong>Электрондук почта мурунтан эле колдонулууда!</strong> Башкасын тандаңыз."
+      },
+      "success": "<strong>Орнотуулар сакталды!</strong>",
+      "validate": {
+        "firstname": {
+          "required": "Сиздин атыңыз талап кылынат.",
+          "minlength": "Сиздин атыңыз кеминде 1 белгиден турушу керек",
+          "maxlength": "Сиздин атыңыз 50 белгиден ашпашы керек"
+        },
+        "lastname": {
+          "required": "Фамилияңыз талап кылынат.",
+          "minlength": "Фамилияңыз 1 белгиден кем эмес болушу керек",
+          "maxlength": "Фамилияңыз 50 белгиден ашпашы керек"
+        }
+      }
+    }
+  }
+}

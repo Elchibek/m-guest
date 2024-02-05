@@ -1,0 +1,31 @@
+{
+  "userManagement": {
+    "home": {
+      "title": "Колдонуучулар",
+      "refreshListLabel": "Тизмени жаңылоо",
+      "createLabel": "Жаңы колдонуучуну түзүңүз",
+      "createOrEditLabel": "Колдонуучуну түзүңүз же түзөтүңүз"
+    },
+    "created": "Идентификатор менен жаңы колдонуучу түзүлөт {{ param }}",
+    "updated": "Колдонуучу идентификатор менен жаңыртылды {{ param }}",
+    "deleted": "Колдонуучу идентификатор менен жок кылынат {{ param }}",
+    "delete": {
+      "question": "Колдонуучуну чын эле жок кылгыңыз келеби {{ login }}?"
+    },
+    "detail": {
+      "title": "Колдонуучу"
+    },
+    "login": "Кирүү",
+    "firstName": "Ысым",
+    "lastName": "Фамилия",
+    "email": "Email",
+    "activated": "Жандырылды",
+    "deactivated": "Өчүрүлгөн",
+    "profiles": "Профильдер",
+    "langKey": "Тил",
+    "createdBy": "Тарабынан түзүлгөн",
+    "createdDate": "Түзүлгөн датасы",
+    "lastModifiedBy": "Тарабынан өзгөртүлгөн",
+    "lastModifiedDate": "Өзгөртүлгөн датасы"
+  }
+}

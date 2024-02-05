@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072759",
+  "dto": "mapstruct",
+  "entityTableName": "floor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "numFloor",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "backgroundColor",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Floor",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "entrance",
+      "relationshipName": "entrance",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

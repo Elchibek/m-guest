@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "arrivalDepartureStatic": {
+      "home": {
+        "title": "Arrival Departure Statics",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Arrival Departure Static ekle",
+        "createOrEditLabel": "Yeni Arrival Departure Static ekle veya guncelle",
+        "notFound": "Arrival Departure Statics kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Arrival Departure Static eklendi",
+      "updated": "{{ param }} nolu Arrival Departure Static guncellendi",
+      "deleted": "{{ param }} nolu Arrival Departure Static silindi",
+      "delete": {
+        "question": "{{ id }} nolu Arrival Departure Static silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Arrival Departure Static"
+      },
+      "id": "ID",
+      "isArrival": "Is Arrival",
+      "date": "Date",
+      "countPerson": "Count Person"
+    }
+  }
+}

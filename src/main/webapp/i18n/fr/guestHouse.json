@@ -1,0 +1,28 @@
+{
+  "guestApp": {
+    "guestHouse": {
+      "home": {
+        "title": "GuestHouses",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Guest House",
+        "createOrEditLabel": "Créer ou éditer un Guest House",
+        "notFound": "Aucun Guest House trouvé"
+      },
+      "created": "Un nouveau Guest House a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Guest House avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Guest House avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Guest House {{ id }} ?"
+      },
+      "detail": {
+        "title": "Guest House"
+      },
+      "id": "ID",
+      "name": "Name",
+      "isEmpty": "Is Empty",
+      "countPerson": "Count Person",
+      "backgroundColor": "Background Color",
+      "floor": "Floor"
+    }
+  }
+}

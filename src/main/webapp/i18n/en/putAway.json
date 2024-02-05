@@ -1,0 +1,28 @@
+{
+  "guestApp": {
+    "putAway": {
+      "home": {
+        "title": "Коюңуз",
+        "refreshListLabel": "Тизмени жаңылоо",
+        "createLabel": "Жаңы Put Away түзүңүз",
+        "createOrEditLabel": "Put Away түзүңүз же түзөтүңүз",
+        "notFound": "Put Aways табылган жок"
+      },
+      "created": "Идентификатор менен жаңы Put Away түзүлдү {{ param }}",
+      "updated": "Put Away идентификатор менен жаңыртылды {{ param }}",
+      "deleted": "Put Away идентификатор менен өчүрүлөт {{ param }}",
+      "delete": {
+        "question": "Put Away дегенди чын эле жок кылгыңыз келеби? {{ id }}?"
+      },
+      "detail": {
+        "title": "Алып сал"
+      },
+      "id": "ID",
+      "countPerson": "Адам саны",
+      "whenLeft": "Качан сол",
+      "isAll": "Баары",
+      "explanation": "Түшүндүрмө",
+      "guest": "Конок"
+    }
+  }
+}

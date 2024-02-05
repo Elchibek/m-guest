@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072659",
+  "dto": "mapstruct",
+  "entityTableName": "guest_contact",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "explanation",
+      "fieldType": "String"
+    }
+  ],
+  "name": "GuestContact",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

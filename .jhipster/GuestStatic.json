@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205073459",
+  "dto": "mapstruct",
+  "entityTableName": "guest_static",
+  "fields": [
+    {
+      "fieldName": "isArchive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "countPerson",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "toDayDeparture",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "toMorrowDeparture",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "totalDidntPay",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numOfApartments",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "affordableApartments",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "GuestStatic",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

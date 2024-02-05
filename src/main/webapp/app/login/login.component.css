@@ -1,0 +1,73 @@
+input {
+  padding: 10px;
+}
+
+small {
+  margin-left: 8px;
+}
+
+.banner-sec {
+  background: url('../../content/images/pexels-photo.jpg') no-repeat left bottom;
+  background-size: cover;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+.label {
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.jh-card {
+  padding: 0px !important;
+}
+
+.login-block {
+  padding: 50px 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.float-right {
+  float: right;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: #de6262;
+}
+
+.login-sec h2:after {
+  content: ' ';
+  width: 100px;
+  height: 5px;
+  background: #feb58a;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-login {
+  background: #de6262;
+  color: #fff;
+  font-weight: 600;
+}

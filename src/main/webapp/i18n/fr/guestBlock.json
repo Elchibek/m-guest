@@ -1,0 +1,30 @@
+{
+  "guestApp": {
+    "guestBlock": {
+      "home": {
+        "title": "GuestBlocks",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Guest Block",
+        "createOrEditLabel": "Créer ou éditer un Guest Block",
+        "notFound": "Aucun Guest Block trouvé"
+      },
+      "created": "Un nouveau Guest Block a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Guest Block avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Guest Block avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Guest Block {{ id }} ?"
+      },
+      "detail": {
+        "title": "Guest Block"
+      },
+      "id": "ID",
+      "name": "Name",
+      "entranceName": "Entrance Name",
+      "numEntrance": "Num Entrance",
+      "floorName": "Floor Name",
+      "numFloor": "Num Floor",
+      "houseName": "House Name",
+      "numHouse": "Num House"
+    }
+  }
+}

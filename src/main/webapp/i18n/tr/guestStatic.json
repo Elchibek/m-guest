@@ -1,0 +1,31 @@
+{
+  "guestApp": {
+    "guestStatic": {
+      "home": {
+        "title": "Guest Statics",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Guest Static ekle",
+        "createOrEditLabel": "Yeni Guest Static ekle veya guncelle",
+        "notFound": "Guest Statics kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Guest Static eklendi",
+      "updated": "{{ param }} nolu Guest Static guncellendi",
+      "deleted": "{{ param }} nolu Guest Static silindi",
+      "delete": {
+        "question": "{{ id }} nolu Guest Static silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Guest Static"
+      },
+      "id": "ID",
+      "isArchive": "Is Archive",
+      "countPerson": "Count Person",
+      "toDayDeparture": "To Day Departure",
+      "toMorrowDeparture": "To Morrow Departure",
+      "totalPrice": "Total Price",
+      "totalDidntPay": "Total Didnt Pay",
+      "numOfApartments": "Num Of Apartments",
+      "affordableApartments": "Affordable Apartments"
+    }
+  }
+}

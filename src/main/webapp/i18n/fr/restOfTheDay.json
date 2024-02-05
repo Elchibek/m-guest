@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "restOfTheDay": {
+      "home": {
+        "title": "RestOfTheDays",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Rest Of The Day",
+        "createOrEditLabel": "Créer ou éditer un Rest Of The Day",
+        "notFound": "Aucun Rest Of The Day trouvé"
+      },
+      "created": "Un nouveau Rest Of The Day a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Rest Of The Day avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Rest Of The Day avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Rest Of The Day {{ id }} ?"
+      },
+      "detail": {
+        "title": "Rest Of The Day"
+      },
+      "id": "ID",
+      "willStay": "Will Stay",
+      "num": "Num",
+      "isDeparture": "Is Departure"
+    }
+  }
+}

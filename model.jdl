@@ -1,0 +1,198 @@
+/* 
+    Эгерде бир таблицаны очуротурган болсок анда аны башка
+    таблицада туташпаганын текшерип туруп анан очуруш керек
+    болбосо уруксат бербеш керек
+
+    Ал учун атайын бир сервис тузуш керек
+*/
+/* 
+    List<GuestNomer> findAllByGuestBlockId(String guestBlockId);
+
+    private Integer getTotalPrice(Guest guest) {
+        LocalDate startDate =  LocalDate.ofInstant(guest.getStartDate(), ZoneOffset.UTC);
+        LocalDate endDate =  LocalDate.ofInstant(guest.getEndDate(), ZoneOffset.UTC);
+        int total = Period.between(startDate, endDate).getDays() * (guest.getPrice() * guest.getCountPerson());
+        return total;
+    }
+ */
+// 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
+
+// Буну тузуп атканда ар бирин бирден тузбой эле Angular га parametr 
+// койуп койуш керек (Мисалы) 5 дегенде бул параметр серверге барат
+// сервер болсо мындай (Floor) таблицадан бешти тузот сандары окшош болбойт
+
+// анан жанына Этажды койуш керек канча этаж болсо ошончо этажды ар
+// бир Подъездге рефин сактайбыз
+// Астынкы (GuestBlock, Entrance, Floor, GuestHouse) таблицалар 
+// бир тузулуп бир очурулуш керек анан (админде) гана коргозулот
+entity GuestBlock {
+    name String required unique
+    // Анан DTO нун жардамы менен ар бир таблицанын атын атайбыз
+    numEntrance Integer required // Количество Подъезд
+    numFloor Integer required // Количество Этаж
+    numHouse Integer required // Ар бир этажда канча кв бар 
+}
+
+// Подъезд 
+// GuestBlock тузулгондон кийин жаны Подъезд тузо албайбыз бирок озгорто алабыз
+entity Entrance {
+    name String required
+    numEntrance Integer required // Номер Подъезд
+}
+
+/* 
+    Астыдагы backgroundColor'лор Guest'тин DTO'сунда жазылат
+ */
+// Этаж
+// GuestBlock тузулгондон кийин жаны этаж тузо албайбыз бирок озгорто алабыз
+// Ар бир Подъездге GuestBlock'то канча этаж болсо ошончону тузобуз
+entity Floor {
+    name String required
+    numFloor Integer required // Номер Этаж
+    backgroundColor String
+}
+
+// Гостевой дом 
+// Ар бир Этажга GuestBlock'то канча кв болсо ошончону тузобуз
+entity GuestHouse {
+    name String required unique
+    isEmpty Boolean  // пусто def=false
+    countPerson Integer // Квартирада канча адам бар def=0
+    backgroundColor String
+}
+
+// Башта конокту келген жерин жазып алабыз
+// Конок кайдан? Ош, Баткен, Талас, Казакстан, Туркия
+entity GuestFrom {
+    name String required unique
+}
+
+/* 
+     Коп текс жазылганда канти таблицанын туурасын (max-width) кыла алабыз
+     Эгерде админден башкасы жаны Guest тузсо, озгортсо жана очурсо 
+     анда админге уведомления кылыш керек
+ */
+// Буга userId нин кереги жок 
+// startDate менен endDate нин аралык куну минимун 1 кун болуш керек
+// болбосо компилациядан откорбош керек
+entity Guest {
+    name String required
+    guestInstitution String
+    responsible String
+    // Архив кнопкасын койуш керек. Архивде очурулбойт ким,качан жана кайдан келгени 
+    // историяда сакталып тура берет буларды очургонго болбойт
+    isArchive Boolean // def=false
+    // Эгерде датасы узартсак анда ушуга тиешелуулорду дагы озгортуш керек
+    startDate Instant required
+    endDate Instant required 
+    countDidntPay Integer // Канча адам толободу
+    // Буну серверге койобуз эгерде устунку поля ноль болсо анда бул true болот
+    paid Boolean // Оплаченный (Эгерде бул 'true' болсо анда баары тологон болот 'fale' ушунун эле тескериси)
+    countPerson Integer required // Канча адам
+    explanation String
+    price Integer required // Бул баа ар бир адамга бирден эсептелет
+    // Адамдардын санын кошуп суммасын чыгарабыз
+    // Эгерде жарымы толоп жарымы толой элек болсо анда ошого карата топтом
+    // Чыгарыш керек
+    totalPrice Integer
+}
+
+entity DidntPay {
+    countPerson Integer
+    paid Integer
+    explanation String
+}
+
+entity GuestContact {
+    name String
+    phone String
+    explanation String
+}
+
+
+// Анан дагы кундун аралыгын жазып ар бир кун сайын кемитип туруш керек
+// Ангуларга статик бар койуп койуш керек 
+// Буну клиент тараптан озгорто жана очуро албайбыз
+// TODO Guest ке жазыш керек
+// Остаток дня
+entity RestOfTheDay {
+    willStay Integer  // Канча кун калышат
+    num Integer required  // остаток дня
+    // Куну бутсо 
+    isDeparture Boolean // Эгерде куну бутсо анда 'true' болот
+}
+
+// Алып сал
+entity PutAway {
+    countPerson Integer required // Коптугу
+    whenLeft Instant // Качан кетккен
+    countDay Integer // Канча кун жашады
+    // Эгерде 'true' анда толук кун эсептелет 'false' устунку датасына чейин эсептелет
+    // 'true' болсо анда 'date' ни коргозбойбуз
+    // isAll Boolean
+    // isPay Boolean // Толоду же
+    totalPrice Integer
+    explanation String // Ачыклама-тушундурмо неге чыгып кетти ж.б ...
+}
+
+// Бул жерге ('архив','создать' жана 'адам кемитуу') кнопкасы басылганда гана сакташ керек
+entity ArrivalDepartureStatic {
+    isArrival Boolean // Келгендерби же кеткендерби
+    date Instant required// Качан келген жана кеткен
+    countPerson Integer required// Канча адам
+}
+
+entity GuestStatic {
+    isArchive Boolean // Архивдин же архив эместин статистикасын коргозот
+    countPerson Integer required// Конок саны 
+    totalPrice Integer // Акчанын топтому
+    // Канча адам толой элек анан ушуга эле акчаны кобойтуп топтомун статискага чыгарабыз
+    totalDidntPay Integer 
+    numOfApartments Integer  // Квнын саны
+    affordableApartments Integer  // Бош квнын саны
+}
+
+// Ким тарабынан тузулгон жана озгортулгон
+// Мында очуруу жана койуу функциясы болбойт
+// entity GuestChange {
+//     userId String required
+//     name String // Кайсы таблицаны озгортту 
+//     txt TextBlob // { name: 'Test' ...} ушутип кактайбыз
+//     updatedDate Instant required
+// }
+
+relationship OneToMany {
+    Guest to PutAway
+    Guest to DidntPay
+    Guest to GuestContact
+    // Guest to GuestChange
+}
+
+relationship OneToOne {
+    Guest{restOfTheDay} to RestOfTheDay
+}
+
+relationship ManyToOne {
+    Entrance{guestBlock required} to GuestBlock
+    Floor{entrance required} to Entrance
+    GuestHouse{floor required} to Floor
+
+    Guest{guestBlock required} to GuestBlock
+    Guest{entrance required} to Entrance
+    Guest{floor required} to Floor
+    Guest{guestHouse required} to GuestHouse
+    Guest{guestFrom required} to GuestFrom
+}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+// search Guest with elasticsearch
+filter * except RestOfTheDay
+
+deployment {
+    deploymentType docker-compose
+    // directoryPath 
+    dockerRepositoryName "yourDockerLoginName"
+    dockerPushCommand "docker push"
+}

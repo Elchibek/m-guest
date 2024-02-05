@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205073359",
+  "dto": "mapstruct",
+  "entityTableName": "arrival_departure_static",
+  "fields": [
+    {
+      "fieldName": "isArrival",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "countPerson",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "ArrivalDepartureStatic",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

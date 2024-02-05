@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "guestContact": {
+      "home": {
+        "title": "GuestContacts",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Guest Contact",
+        "createOrEditLabel": "Créer ou éditer un Guest Contact",
+        "notFound": "Aucun Guest Contact trouvé"
+      },
+      "created": "Un nouveau Guest Contact a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Guest Contact avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Guest Contact avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Guest Contact {{ id }} ?"
+      },
+      "detail": {
+        "title": "Guest Contact"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "explanation": "Explanation"
+    }
+  }
+}

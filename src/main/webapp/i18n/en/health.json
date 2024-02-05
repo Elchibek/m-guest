@@ -1,0 +1,31 @@
+{
+  "health": {
+    "title": "Ден соолук текшерүүлөрү",
+    "refresh.button": "Жаңылоо",
+    "stacktrace": "Stacktrace",
+    "details": {
+      "details": "Толук маалымат",
+      "properties": "Properties",
+      "name": "Аты",
+      "value": "Нарк",
+      "error": "Ката"
+    },
+    "indicator": {
+      "diskSpace": "Диск мейкиндиги",
+      "mail": "Email",
+      "livenessState": "Жашоо абалы",
+      "readinessState": "Даярдык абалы",
+      "ping": "Колдонмо",
+      "mongo": "MongoDB"
+    },
+    "table": {
+      "service": "Кызматтын аталышы",
+      "status": "Статус"
+    },
+    "status": {
+      "UNKNOWN": "UNKNOWN",
+      "UP": "UP",
+      "DOWN": "DOWN"
+    }
+  }
+}

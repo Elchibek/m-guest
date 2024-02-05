@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "restOfTheDay": {
+      "home": {
+        "title": "Rest Of The Days",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Rest Of The Day ekle",
+        "createOrEditLabel": "Yeni Rest Of The Day ekle veya guncelle",
+        "notFound": "Rest Of The Days kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Rest Of The Day eklendi",
+      "updated": "{{ param }} nolu Rest Of The Day guncellendi",
+      "deleted": "{{ param }} nolu Rest Of The Day silindi",
+      "delete": {
+        "question": "{{ id }} nolu Rest Of The Day silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Rest Of The Day"
+      },
+      "id": "ID",
+      "willStay": "Will Stay",
+      "num": "Num",
+      "isDeparture": "Is Departure"
+    }
+  }
+}

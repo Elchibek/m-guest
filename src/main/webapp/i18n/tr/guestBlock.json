@@ -1,0 +1,30 @@
+{
+  "guestApp": {
+    "guestBlock": {
+      "home": {
+        "title": "Misafir Blokları",
+        "refreshListLabel": "Güncelleme listesi",
+        "createLabel": "Yeni bir Misafir Bloğu oluşturun",
+        "createOrEditLabel": "Misafir Bloğu oluşturun veya düzenleyin",
+        "notFound": "Misafir Blokları bulunamadı"
+      },
+      "created": "Kimlikle yeni Misafir Bloğu oluşturuldu",
+      "updated": "Misafir Bloğu kimlikle güncellendi",
+      "deleted": "Kimlikle birlikte Misafir Engellemesi kaldırıldı",
+      "delete": {
+        "question": "Misafir Engellemeyi kaldırmak istediğinizden emin misiniz? {{ id }}?"
+      },
+      "detail": {
+        "title": "Misafir Bloğu"
+      },
+      "id": "ID",
+      "name": "İsim",
+      "entranceName": "Giriş Adı",
+      "numEntrance": "Sayı Giriş",
+      "floorName": "Kat Adı",
+      "numFloor": "Sayı Kat",
+      "houseName": "Evin adı",
+      "numHouse": "Sayı Evi"
+    }
+  }
+}

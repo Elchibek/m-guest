@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "guestContact": {
+      "home": {
+        "title": "Guest Contacts",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Guest Contact ekle",
+        "createOrEditLabel": "Yeni Guest Contact ekle veya guncelle",
+        "notFound": "Guest Contacts kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Guest Contact eklendi",
+      "updated": "{{ param }} nolu Guest Contact guncellendi",
+      "deleted": "{{ param }} nolu Guest Contact silindi",
+      "delete": {
+        "question": "{{ id }} nolu Guest Contact silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Guest Contact"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "explanation": "Explanation"
+    }
+  }
+}

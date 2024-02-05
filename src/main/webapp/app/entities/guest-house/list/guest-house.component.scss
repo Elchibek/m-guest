@@ -1,0 +1,36 @@
+thead tr td {
+  text-align: center;
+}
+tbody td {
+  cursor: pointer;
+  text-align: center;
+}
+tbody td:hover {
+  .bw3 {
+    display: none;
+  }
+  .feb2 {
+    display: block;
+  }
+  .btn {
+    padding: 0;
+  }
+
+  // background-color: #ececec;
+}
+
+.feb2 {
+  display: none;
+}
+.bw3 {
+  color: #ececec;
+  display: table;
+}
+
+.btn-sm {
+  --bs-btn-padding-y: 0;
+}
+
+.td-color {
+  background-color: rgb(73, 122, 73);
+}

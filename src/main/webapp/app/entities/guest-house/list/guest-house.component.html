@@ -1,0 +1,147 @@
+<div>
+  <h2 id="page-heading" data-cy="GuestHouseHeading">
+    <span jhiTranslate="guestApp.guestHouse.home.title">Guest Houses</span>
+    <div class="d-flex justify-content-end">
+      <div class="col-md-2 me-2">
+        <select [(ngModel)]="guestBlock" (change)="getGuestBlockId()" class="form-select" id="field_guestBlockId" name="guestBlockId">
+          <option [ngValue]="guestBlockOption" *ngFor="let guestBlockOption of guestBlocksSharedCollection">
+            {{ guestBlockOption.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-2 me-2">
+        <select [(ngModel)]="entrance" class="form-select" id="field_entranceId" name="entranceId">
+          <option [ngValue]="e" *ngFor="let e of entrancesSharedCollection">
+            {{ e.name }}
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="guestApp.guestHouse.home.refreshListLabel">Refresh list</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="guestHouses?.length === 0">
+    <span jhiTranslate="guestApp.guestHouse.home.notFound">No Guest Houses found</span>
+  </div>
+  <div class="table-responsive table-entities text-nowrap mtop">
+    <table class="table table-bordered" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <td>N</td>
+          <td [attr.colspan]="guestBlock?.numHouse" *ngFor="let e of entrancesSharedCollection">
+            {{ e.name }}
+            <br />
+            <a class="btn btn-primary btn-sm" data-cy="entityEditButton" style="display: flex"></a>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="guestHouses">
+          <tr *ngFor="let h of numberHouses">
+            <td>{{ h + 1 }}</td>
+            <td *ngFor="let gh of getHouse(h)" class="td-color">
+              <span class="bw3">
+                {{ gh.name }}
+              </span>
+              <span>
+                <fa-icon icon="user" style="color: rgb(23, 65, 66)"></fa-icon>
+                <span style="color: goldenrod">{{ gh.countPerson }}</span>
+              </span>
+              <br />
+              <a class="btn btn-primary btn-sm" data-cy="entityEditButton" style="display: block">
+                <span class="feb2">Edit</span>
+              </a>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="guestHouses && guestHouses.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="guestApp.guestHouse.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isEmpty">
+            <div class="d-flex">
+              <span jhiTranslate="guestApp.guestHouse.isEmpty">Is Empty</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="countPerson">
+            <div class="d-flex">
+              <span jhiTranslate="guestApp.guestHouse.countPerson">Count Person</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="backgroundColor">
+            <div class="d-flex">
+              <span jhiTranslate="guestApp.guestHouse.backgroundColor">Background Color</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="floor.id">
+            <div class="d-flex">
+              <span jhiTranslate="guestApp.guestHouse.floor">Floor</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let guestHouse of guestHouses; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/guest-house', guestHouse.id, 'view']">{{ guestHouse.id }}</a>
+          </td>
+          <td>{{ guestHouse.name }}</td>
+          <td>{{ guestHouse.isEmpty }}</td>
+          <td>{{ guestHouse.countPerson }}</td>
+          <td>{{ guestHouse.backgroundColor }}</td>
+          <td>
+            <div *ngIf="guestHouse.floor">
+              <a [routerLink]="['/floor', guestHouse.floor.id, 'view']">{{ guestHouse.floor.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/guest-house', guestHouse.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a [routerLink]="['/guest-house', guestHouse.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(guestHouse)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

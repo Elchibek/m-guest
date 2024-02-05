@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "didntPay": {
+      "home": {
+        "title": "Didnt Pays",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Didnt Pay",
+        "createOrEditLabel": "Создать или отредактировать Didnt Pay",
+        "notFound": "Didnt Pays не найдено"
+      },
+      "created": "Новый Didnt Pay создан с идентификатором {{ param }}",
+      "updated": "Didnt Pay обновлен с идентификатором {{ param }}",
+      "deleted": "Didnt Pay удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Didnt Pay {{ id }}?"
+      },
+      "detail": {
+        "title": "Didnt Pay"
+      },
+      "id": "ID",
+      "countPerson": "Count Person",
+      "paid": "Paid",
+      "explanation": "Explanation"
+    }
+  }
+}

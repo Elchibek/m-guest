@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "didntPay": {
+      "home": {
+        "title": "DidntPays",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Didnt Pay",
+        "createOrEditLabel": "Créer ou éditer un Didnt Pay",
+        "notFound": "Aucun Didnt Pay trouvé"
+      },
+      "created": "Un nouveau Didnt Pay a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Didnt Pay avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Didnt Pay avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Didnt Pay {{ id }} ?"
+      },
+      "detail": {
+        "title": "Didnt Pay"
+      },
+      "id": "ID",
+      "countPerson": "Count Person",
+      "paid": "Paid",
+      "explanation": "Explanation"
+    }
+  }
+}

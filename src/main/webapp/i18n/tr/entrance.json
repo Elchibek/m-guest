@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "entrance": {
+      "home": {
+        "title": "Entrances",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Entrance ekle",
+        "createOrEditLabel": "Yeni Entrance ekle veya guncelle",
+        "notFound": "Entrances kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Entrance eklendi",
+      "updated": "{{ param }} nolu Entrance guncellendi",
+      "deleted": "{{ param }} nolu Entrance silindi",
+      "delete": {
+        "question": "{{ id }} nolu Entrance silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Entrance"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numEntrance": "Num Entrance",
+      "guestBlock": "Guest Block"
+    }
+  }
+}

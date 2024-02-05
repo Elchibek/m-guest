@@ -1,0 +1,31 @@
+{
+  "guestApp": {
+    "guestStatic": {
+      "home": {
+        "title": "Guest Statics",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Guest Static",
+        "createOrEditLabel": "Создать или отредактировать Guest Static",
+        "notFound": "Guest Statics не найдено"
+      },
+      "created": "Новый Guest Static создан с идентификатором {{ param }}",
+      "updated": "Guest Static обновлен с идентификатором {{ param }}",
+      "deleted": "Guest Static удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Guest Static {{ id }}?"
+      },
+      "detail": {
+        "title": "Guest Static"
+      },
+      "id": "ID",
+      "isArchive": "Is Archive",
+      "countPerson": "Count Person",
+      "toDayDeparture": "To Day Departure",
+      "toMorrowDeparture": "To Morrow Departure",
+      "totalPrice": "Total Price",
+      "totalDidntPay": "Total Didnt Pay",
+      "numOfApartments": "Num Of Apartments",
+      "affordableApartments": "Affordable Apartments"
+    }
+  }
+}

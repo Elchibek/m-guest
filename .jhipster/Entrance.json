@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072659",
+  "dto": "mapstruct",
+  "entityTableName": "entrance",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "numEntrance",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Entrance",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "guestBlock",
+      "relationshipName": "guestBlock",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

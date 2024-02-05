@@ -1,0 +1,145 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-guest-block-heading" data-cy="GuestBlockCreateUpdateHeading" jhiTranslate="guestApp.guestBlock.home.createOrEditLabel">
+        Create or edit a Guest Block
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guestBlock.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guestBlock.entranceName" for="field_nameEntrance">Name Entrance</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nameEntrance"
+              id="field_nameEntrance"
+              data-cy="nameEntrance"
+              formControlName="nameEntrance"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3" *ngIf="editForm.controls.id.value == null">
+            <label class="form-label" jhiTranslate="guestApp.guestBlock.numEntrance" for="field_numEntrance">Num Entrance</label>
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              name="numEntrance"
+              id="field_numEntrance"
+              data-cy="numEntrance"
+              formControlName="numEntrance"
+            />
+            <div
+              *ngIf="editForm.get('numEntrance')!.invalid && (editForm.get('numEntrance')!.dirty || editForm.get('numEntrance')!.touched)"
+            >
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('numEntrance')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('numEntrance')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-3" *ngIf="editForm.controls.id.value == null">
+            <label class="form-label" jhiTranslate="guestApp.guestBlock.numFloor" for="field_numFloor">Num Floor</label>
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              name="numFloor"
+              id="field_numFloor"
+              data-cy="numFloor"
+              formControlName="numFloor"
+            />
+            <div *ngIf="editForm.get('numFloor')!.invalid && (editForm.get('numFloor')!.dirty || editForm.get('numFloor')!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('numFloor')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('numFloor')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guestBlock.houseName" for="field_nameHouse">Name House</label>
+            <input type="text" class="form-control" name="nameHouse" id="field_nameHouse" data-cy="nameHouse" formControlName="nameHouse" />
+          </div>
+
+          <div class="col-md-6 mb-3" *ngIf="editForm.controls.id.value == null">
+            <label class="form-label" jhiTranslate="guestApp.guestBlock.numHouse" for="field_numHouse">Num House</label>
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              name="numHouse"
+              id="field_numHouse"
+              data-cy="numHouse"
+              formControlName="numHouse"
+            />
+            <div *ngIf="editForm.get('numHouse')!.invalid && (editForm.get('numHouse')!.dirty || editForm.get('numHouse')!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('numHouse')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('numHouse')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

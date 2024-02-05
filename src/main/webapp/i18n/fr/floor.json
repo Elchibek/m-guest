@@ -1,0 +1,27 @@
+{
+  "guestApp": {
+    "floor": {
+      "home": {
+        "title": "Floors",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Floor",
+        "createOrEditLabel": "Créer ou éditer un Floor",
+        "notFound": "Aucun Floor trouvé"
+      },
+      "created": "Un nouveau Floor a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Floor avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Floor avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Floor {{ id }} ?"
+      },
+      "detail": {
+        "title": "Floor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numFloor": "Num Floor",
+      "backgroundColor": "Background Color",
+      "entrance": "Entrance"
+    }
+  }
+}

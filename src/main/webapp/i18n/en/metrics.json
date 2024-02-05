@@ -1,0 +1,102 @@
+{
+  "metrics": {
+    "title": "Колдонмо метрикасы",
+    "refresh.button": "Жаңылоо",
+    "updating": "Жаңыртылууда...",
+    "jvm": {
+      "title": "JVM метрикасы",
+      "memory": {
+        "title": "Эс",
+        "total": "Жалпы эс",
+        "heap": "Үймө эс",
+        "nonheap": "Үймөк эмес эс"
+      },
+      "threads": {
+        "title": "Жиптер",
+        "all": "Баары",
+        "runnable": "Runnable",
+        "timedwaiting": "Убактылуу күтүү",
+        "waiting": "Күтүү",
+        "blocked": "Бөгөттөлгөн",
+        "dump": {
+          "title": "Жиптердин төгүлүшү",
+          "id": "Id: ",
+          "blockedtime": "Бөгөттөлгөн убакыт",
+          "blockedcount": "Бөгөттөлгөн сан",
+          "waitedtime": "Күтүлгөн убакыт",
+          "waitedcount": "Күткөн сан",
+          "lockname": "Кулпу аты",
+          "stacktrace": "Stacktrace",
+          "show": "Stacktrace көрсөтүү",
+          "hide": "Stacktrace жашыруу"
+        }
+      },
+      "gc": {
+        "title": "Таштанды чогултуу",
+        "marksweepcount": "Sweep эсебин белгилеңиз",
+        "marksweeptime": "Sweep убактысын белгилеңиз",
+        "scavengecount": "Тазалоо саны",
+        "scavengetime": "Тазалоо убактысы"
+      },
+      "http": {
+        "title": "HTTP сурамдары (убакыт миллисекундда)",
+        "active": "Активдүү сурамдар:",
+        "total": "Жалпы сурамдар:",
+        "table": {
+          "code": "Code",
+          "count": "Сан",
+          "mean": "Mean",
+          "average": "Орточо",
+          "max": "Макс"
+        },
+        "code": {
+          "ok": "Макул",
+          "notfound": "Табылган жок",
+          "servererror": "Server Error"
+        }
+      }
+    },
+    "servicesstats": {
+      "title": "Кызмат статистикасы (убакыт миллисекунд менен)",
+      "table": {
+        "name": "Кызматтын аталышы",
+        "count": "Сан",
+        "mean": "Mean",
+        "min": "Мин",
+        "max": "Макс",
+        "p50": "p50",
+        "p75": "p75",
+        "p95": "p95",
+        "p99": "p99"
+      }
+    },
+    "cache": {
+      "title": "Кэш статистикасы",
+      "cachename": "Кэш аты",
+      "hits": "Cache Hits",
+      "misses": "Cache Misses",
+      "gets": "Cache Gets",
+      "puts": "Cache Puts",
+      "removals": "Кэшти жок кылуу",
+      "evictions": "Кэш чыгаруу",
+      "hitPercent": "Кэштин соккусу %",
+      "missPercent": "Кэш мисс %",
+      "averageGetTime": "Орточо алуу убактысы (µs)",
+      "averagePutTime": "Орточо коюу убактысы (мкс)",
+      "averageRemoveTime": "Орточо алып салуу убактысы (µs)"
+    },
+    "datasource": {
+      "usage": "Туташуу бассейнин колдонуу",
+      "title": "DataSource статистикасы (миллисекунддагы убакыт)",
+      "name": "Бассейнди колдонуу",
+      "count": "Сан",
+      "mean": "Mean",
+      "min": "Мин",
+      "max": "Макс",
+      "p50": "p50",
+      "p75": "p75",
+      "p95": "p95",
+      "p99": "p99"
+    }
+  }
+}

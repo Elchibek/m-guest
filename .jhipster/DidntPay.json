@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072559",
+  "dto": "mapstruct",
+  "entityTableName": "didnt_pay",
+  "fields": [
+    {
+      "fieldName": "countPerson",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "paid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "explanation",
+      "fieldType": "String"
+    }
+  ],
+  "name": "DidntPay",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

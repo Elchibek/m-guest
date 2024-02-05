@@ -1,0 +1,28 @@
+{
+  "guestApp": {
+    "putAway": {
+      "home": {
+        "title": "Put Aways",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Put Away",
+        "createOrEditLabel": "Создать или отредактировать Put Away",
+        "notFound": "Put Aways не найдено"
+      },
+      "created": "Новый Put Away создан с идентификатором {{ param }}",
+      "updated": "Put Away обновлен с идентификатором {{ param }}",
+      "deleted": "Put Away удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Put Away {{ id }}?"
+      },
+      "detail": {
+        "title": "Put Away"
+      },
+      "id": "ID",
+      "countPerson": "Count Person",
+      "whenLeft": "When Left",
+      "isAll": "Is All",
+      "explanation": "Explanation",
+      "guest": "Guest"
+    }
+  }
+}

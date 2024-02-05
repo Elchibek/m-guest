@@ -1,0 +1,15 @@
+{
+  "sessions": {
+    "title": "[ Активдүү сессиялар үчүн <strong>{{username}}</strong>]",
+    "table": {
+      "ipaddress": "IP дареги",
+      "useragent": "Колдонуучу агент",
+      "date": "Дата",
+      "button": "Жарамсыз кылуу"
+    },
+    "messages": {
+      "success": "<strong>Сессия жараксыз!</strong>",
+      "error": "<strong>Ката кетти!</strong> Сессияны жараксыз деп табуу мүмкүн эмес."
+    }
+  }
+}

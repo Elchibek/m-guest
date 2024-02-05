@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "arrivalDepartureStatic": {
+      "home": {
+        "title": "ArrivalDepartureStatics",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Arrival Departure Static",
+        "createOrEditLabel": "Créer ou éditer un Arrival Departure Static",
+        "notFound": "Aucun Arrival Departure Static trouvé"
+      },
+      "created": "Un nouveau Arrival Departure Static a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Arrival Departure Static avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Arrival Departure Static avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Arrival Departure Static {{ id }} ?"
+      },
+      "detail": {
+        "title": "Arrival Departure Static"
+      },
+      "id": "ID",
+      "isArrival": "Is Arrival",
+      "date": "Date",
+      "countPerson": "Count Person"
+    }
+  }
+}

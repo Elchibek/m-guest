@@ -1,0 +1,50 @@
+{
+  "guestApp": {
+    "guest": {
+      "home": {
+        "title": "Гости",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый гость",
+        "createOrEditLabel": "Создать или отредактировать гость",
+        "notFound": "Гость не найдено"
+      },
+      "filter": {
+        "paid": "Оплаченный",
+        "unpaid": "Неоплачиваемый",
+        "from": "От",
+        "before": "До"
+      },
+      "selectAll": "Выберите все",
+      "created": "Новый гость создан",
+      "updated": "Гость обновлен",
+      "deleted": "Гость удален",
+      "delete": {
+        "question": "Вы уверены что хотите удалить?"
+      },
+      "detail": {
+        "title": "Гость"
+      },
+      "id": "ID",
+      "name": "Имя",
+      "guestInstitution": "Гостевое заведение",
+      "responsible": "Ответственный",
+      "isArchive": "Архив",
+      "startDate": "Дата начала",
+      "endDate": "Дата окончания",
+      "countDidntPay": "Граф не заплатил",
+      "paid": "Оплаченный",
+      "countPerson": "Число людей",
+      "explanation": "Объяснение",
+      "price": "Цена",
+      "totalPrice": "Сумма",
+      "restOfTheDay": "Остаток дня",
+      "putAway": "Убрать",
+      "guestBlock": "Блок",
+      "entrance": "Подъезд",
+      "floor": "Этаж",
+      "guestHouse": "Гостевой дом",
+      "guestFrom": "Гость от",
+      "createdBy": "Сделано"
+    }
+  }
+}

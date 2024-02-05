@@ -1,0 +1,10 @@
+{
+  "configuration": {
+    "title": "Конфигурация",
+    "filter": "Чыпка (префикс боюнча)",
+    "table": {
+      "prefix": "Префикс",
+      "properties": "Properties"
+    }
+  }
+}

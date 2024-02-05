@@ -1,0 +1,15 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [],
+    "clusteredDbApps": [],
+    "deploymentType": "docker-compose",
+    "directoryPath": "../",
+    "dockerPushCommand": "docker push",
+    "dockerRepositoryName": "yourDockerLoginName",
+    "gatewayType": "SpringCloudGateway",
+    "jhipsterVersion": "8.0.0",
+    "jwtSecretKey": "ODFhMTExMWEwZDk0Y2EyMDU5MzVlMWQ1ZTQ1YjU5NWQwMDlmYzlhZDc4NDZiNjljYzc4MGE1YmZlYzJiY2EwY2U0ZGYzNmYwOTAzZTk3NWU0MThjMGE3M2I0ZDQ1NTJjOGZjMA==",
+    "monitoring": "no",
+    "serviceDiscoveryType": "consul"
+  }
+}

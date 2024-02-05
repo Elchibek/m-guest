@@ -1,0 +1,163 @@
+{
+  "global": {
+    "title": "Конок",
+    "browsehappy": "Сиз колдонуп жатасыз <strong>эскирген</strong> браузер.  <a href=\"http://browsehappy.com/?locale=en\">браузериңизди жаңыртыңыз</a> тажрыйбаңызды жакшыртуу үчүн.",
+    "menu": {
+      "home": "Башкы бет",
+      "jhipster-needle-menu-add-element": "JHipster бул жерге кошумча меню жазууларын кошот (которбоңуз!)",
+      "entities": {
+        "main": "Объекттер",
+        "jhipster-needle-menu-add-entry": "JHipster бул жерге кошумча объекттерди кошот (которбоңуз!)",
+        "guestBlock": "Блок",
+        "entrance": "Кире бериш",
+        "floor": "Кабат",
+        "guestHouse": "Батир",
+        "guestFrom": "Келген конок",
+        "guest": "Конок",
+        "restOfTheDay": "Калган күнү",
+        "putAway": "Алып сал",
+        "arrivalDepartureStatic": "Келүү Кетүү статикалык",
+        "guestStatic": "Конок статикалык",
+        "didntPay": "Didnt Pay",
+        "guestContact": "Guest Contact"
+      },
+      "account": {
+        "main": "Каттоо эсеби",
+        "settings": "Орнотуулар",
+        "password": "Купуя сөз",
+        "sessions": "Сеанстар",
+        "login": "Кирүү",
+        "logout": "Чыгуу",
+        "register": "Каттоо"
+      },
+      "admin": {
+        "main": "Администрация",
+        "userManagement": "Колдонуучуну башкаруу",
+        "tracker": "Колдонуучу трекер",
+        "metrics": "Metrics",
+        "health": "Ден соолук",
+        "configuration": "Конфигурация",
+        "logs": "Журналдар",
+        "apidocs": "API",
+        "database": "Маалыматтар базасы",
+        "jhipster-needle-menu-add-admin-element": "JHipster бул жерге кошумча меню жазууларын кошот (которбоңуз!)"
+      },
+      "language": "Тил"
+    },
+    "form": {
+      "username.label": "Колдонуучунун аты",
+      "username.placeholder": "Колдонуучунун аты",
+      "currentpassword.label": "Учурдагы Сырсөз",
+      "currentpassword.placeholder": "Учурдагы Сырсөз",
+      "newpassword.label": "Жаңы сыр сөз",
+      "newpassword.placeholder": "Жаңы сыр сөз",
+      "confirmpassword.label": "Жаңы сырсөздү ырастоо",
+      "confirmpassword.placeholder": "Жаңы сырсөздү ырастаңыз",
+      "email.label": "Email",
+      "email.placeholder": "Сиздин электрондук почтаңыз"
+    },
+    "messages": {
+      "info": {
+        "authenticated": {
+          "prefix": "Кааласаң ",
+          "link": "кирүү",
+          "suffix": ", сиз демейки эсептерди сынап көрүңүз:<br/>- Администратор (логин = \"админ\" жана сырсөз = \"admin\") <br/>- Колдонуучу (логин = \"колдонуучу\" жана сырсөз = \"колдонуучу\")."
+        },
+        "register": {
+          "noaccount": "Сизде дагы эле аккаунт жокбу?",
+          "link": "Жаңы каттоо эсебин каттаңыз"
+        }
+      },
+      "error": {
+        "dontmatch": "Сырсөз жана аны ырастоо дал келбейт!"
+      },
+      "validate": {
+        "newpassword": {
+          "required": "Сырсөзүңүз талап кылынат.",
+          "minlength": "Сырсөзүңүз кеминде 4 белгиден турушу керек.",
+          "maxlength": "Сырсөзүңүз 50 белгиден ашпашы керек.",
+          "strength": "Сырсөздүн күчү:"
+        },
+        "confirmpassword": {
+          "required": "Ырастоо сырсөзүңүз талап кылынат.",
+          "minlength": "Ырастоо сырсөзүңүз кеминде 4 белгиден турушу керек.",
+          "maxlength": "Ырастоо сырсөзүңүз 50 белгиден ашпашы керек."
+        },
+        "email": {
+          "required": "Сиздин электрондук почтаңыз талап кылынат.",
+          "invalid": "Сиздин электрондук почтаңыз жараксыз.",
+          "minlength": "Сиздин электрондук почтаңыз 5 белгиден кем эмес болушу керек.",
+          "maxlength": "Сиздин электрондук почтаңыз 50 белгиден ашпашы керек."
+        }
+      }
+    },
+    "field": {
+      "id": "ID"
+    },
+    "ribbon": {
+      "dev": "Өнүгүү"
+    },
+    "item-count": "Көрсөтүү {{first}} - {{second}} нын {{total}} буюмдар."
+  },
+  "entity": {
+    "action": {
+      "addblob": "Blob кошуу",
+      "addimage": "Сүрөт кошуу",
+      "back": "Артка",
+      "cancel": "Жокко чыгаруу",
+      "delete": "Жок кылуу",
+      "archive": "Архивдөө",
+      "edit": "Түзөтүү",
+      "open": "Open",
+      "save": "Сактоо",
+      "view": "Көрүү",
+      "show": "Show {{otherEntity}}"
+    },
+    "detail": {
+      "field": "Талаа",
+      "value": "Нарк"
+    },
+    "archive": {
+      "title": "Архивдөө операциясын ырастоо"
+    },
+    "delete": {
+      "title": "Жок кылуу операциясын ырастоо"
+    },
+    "validation": {
+      "required": "Бул талаа талап кылынат.",
+      "minlength": "Бул талаа жок дегенде болушу керек {{ min }} каармандар.",
+      "maxlength": "Бул талаа андан узун болушу мүмкүн эмес {{ max }} каармандар.",
+      "min": "Бул талаа жок дегенде болушу керек {{ min }}.",
+      "max": "Бул талаа ашык болушу мүмкүн эмес {{ max }}.",
+      "minbytes": "Бул талаа жок дегенде болушу керек {{ min }} байт.",
+      "maxbytes": "Бул талаа ашык болушу мүмкүн эмес {{ max }} байт.",
+      "pattern": "Бул талаа үчүн үлгү болушу керек {{ pattern }}.",
+      "number": "Бул талаа сан болушу керек.",
+      "datetimelocal": "Бул талаа күн жана убакыт болушу керек.",
+      "patternLogin": "Бул талаа тамгаларды, цифраларды жана электрондук почта даректерин гана камтышы мүмкүн."
+    },
+    "filters": {
+      "set": "Төмөнкү чыпкалар орнотулган",
+      "clear": "Чыпканы тазалоо",
+      "clearAll": "Бардык чыпкаларды тазалоо"
+    }
+  },
+  "error": {
+    "internalServerError": "Сервердин ички катасы",
+    "server.not.reachable": "Сервер жеткиликсиз",
+    "url.not.found": "Табылган жок",
+    "NotNull": "Талаа {{ fieldName }} бош болушу мүмкүн эмес!",
+    "Size": "Талаа {{ fieldName }} мин/максималдуу өлчөмү талаптарга жооп бербейт!",
+    "userexists": "Кирүү аты мурунтан эле колдонулган!",
+    "emailexists": "Электрондук почта мурунтан эле колдонулууда!",
+    "idexists": "Жаңы {{ entityName }} ID мурунтан эле болушу мүмкүн эмес",
+    "idnull": "Жараксыз ID",
+    "idinvalid": "Жараксыз ID",
+    "idnotfound": "ID табылбай жатат",
+    "file": {
+      "could.not.extract": "Файл чыгарылбай койду",
+      "not.image": "Файл сүрөт болушу күтүлгөн, бирок \"{{ fileType }}\""
+    }
+  },
+  "footer": "Бул сиздин колонтитулуңуз"
+}

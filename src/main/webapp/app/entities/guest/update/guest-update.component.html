@@ -1,0 +1,488 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-guest-heading" data-cy="GuestCreateUpdateHeading" jhiTranslate="guestApp.guest.home.createOrEditLabel">
+        Create or edit a Guest
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guest.guestFrom" for="field_guestFrom">Guest From</label>
+          <select
+            class="form-control"
+            id="field_guestFrom"
+            data-cy="guestFrom"
+            name="guestFrom"
+            formControlName="guestFrom"
+            [compareWith]="compareGuestFrom"
+          >
+            <option *ngIf="!editForm.get('guestFrom')!.value" [ngValue]="null" selected></option>
+            <option [ngValue]="guestFromOption" *ngFor="let guestFromOption of guestFromsSharedCollection">
+              {{ guestFromOption.name }}
+            </option>
+          </select>
+          <div *ngIf="editForm.get(['guestFrom'])!.invalid && (editForm.get(['guestFrom'])!.dirty || editForm.get(['guestFrom'])!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get(['guestFrom'])?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.guestBlock" for="field_guestBlock">Guest Block</label>
+            <select
+              (ngModelChange)="getGuestBlockId($event)"
+              class="form-control"
+              id="field_guestBlock"
+              data-cy="guestBlock"
+              name="guestBlock"
+              formControlName="guestBlock"
+              [compareWith]="compareGuestBlock"
+            >
+              <option *ngIf="!editForm.get('guestBlock')!.value" [ngValue]="null" selected></option>
+              <option [ngValue]="guestBlockOption" *ngFor="let guestBlockOption of guestBlocksSharedCollection">
+                {{ guestBlockOption.name }}
+              </option>
+            </select>
+            <div
+              *ngIf="
+                editForm.get(['guestBlock'])!.invalid && (editForm.get(['guestBlock'])!.dirty || editForm.get(['guestBlock'])!.touched)
+              "
+            >
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get(['guestBlock'])?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.entrance" for="field_entrance">Entrance</label>
+            <select
+              (ngModelChange)="getEntranceId($event)"
+              class="form-control"
+              id="field_entrance"
+              data-cy="entrance"
+              name="entrance"
+              formControlName="entrance"
+              [compareWith]="compareEntrance"
+            >
+              <option *ngIf="!editForm.get('entrance')!.value" [ngValue]="null" selected></option>
+              <option [ngValue]="entranceOption" *ngFor="let entranceOption of entrancesSharedCollection">
+                {{ entranceOption.name }} {{ entranceOption.numEntrance }}
+              </option>
+            </select>
+            <div *ngIf="editForm.get(['entrance'])!.invalid && (editForm.get(['entrance'])!.dirty || editForm.get(['entrance'])!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get(['entrance'])?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.floor" for="field_floor">Floor</label>
+            <select
+              (ngModelChange)="getFloorId($event)"
+              class="form-control"
+              id="field_floor"
+              data-cy="floor"
+              name="floor"
+              formControlName="floor"
+              [compareWith]="compareFloor"
+            >
+              <option *ngIf="!editForm.get('floor')!.value" [ngValue]="null" selected></option>
+              <option [ngValue]="floorOption" *ngFor="let floorOption of floorsSharedCollection">{{ floorOption.numFloor }}</option>
+            </select>
+            <div *ngIf="editForm.get(['floor'])!.invalid && (editForm.get(['floor'])!.dirty || editForm.get(['floor'])!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get(['floor'])?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.guestHouse" for="field_guestHouse">Guest House</label>
+            <select
+              class="form-control"
+              id="field_guestHouse"
+              data-cy="guestHouse"
+              name="guestHouse"
+              formControlName="guestHouse"
+              [compareWith]="compareGuestHouse"
+            >
+              <option *ngIf="!editForm.get('guestHouse')!.value" [ngValue]="null" selected></option>
+              <option [ngValue]="guestHouseOption" *ngFor="let guestHouseOption of guestHousesSharedCollection">
+                {{ guestHouseOption.name }} /
+                {{ guestHouseOption.countPerson }}
+              </option>
+            </select>
+            <div
+              *ngIf="
+                editForm.get(['guestHouse'])!.invalid && (editForm.get(['guestHouse'])!.dirty || editForm.get(['guestHouse'])!.touched)
+              "
+            >
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get(['guestHouse'])?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guest.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.startDate" for="field_startDate">Start Date</label>
+            <div class="d-flex">
+              <input
+                id="field_startDate"
+                data-cy="startDate"
+                type="datetime-local"
+                class="form-control"
+                name="startDate"
+                formControlName="startDate"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+            <div *ngIf="editForm.get('startDate')!.invalid && (editForm.get('startDate')!.dirty || editForm.get('startDate')!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('startDate')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('startDate')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.endDate" for="field_endDate">End Date</label>
+            <div class="d-flex">
+              <input
+                id="field_endDate"
+                data-cy="endDate"
+                type="datetime-local"
+                class="form-control"
+                [min]="editForm.get('startDate')!.value"
+                name="endDate"
+                formControlName="endDate"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+            <div *ngIf="editForm.get('endDate')!.invalid && (editForm.get('endDate')!.dirty || editForm.get('endDate')!.touched)">
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('endDate')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('endDate')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.countPerson" for="field_countPerson">Count Person</label>
+            <input
+              type="number"
+              class="form-control"
+              min="1"
+              name="countPerson"
+              id="field_countPerson"
+              data-cy="countPerson"
+              (input)="formatInput($any($event).target)"
+              formControlName="countPerson"
+            />
+            <div
+              *ngIf="editForm.get('countPerson')!.invalid && (editForm.get('countPerson')!.dirty || editForm.get('countPerson')!.touched)"
+            >
+              <small
+                class="form-text text-danger"
+                *ngIf="editForm.get('countPerson')?.errors?.required"
+                jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('countPerson')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.price" for="field_price">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              name="price"
+              id="field_price"
+              data-cy="price"
+              (input)="formatInput($any($event).target)"
+              formControlName="price"
+            />
+            <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+              <small class="form-text text-danger" *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required"
+                >This field is required.</small
+              >
+              <small class="form-text text-danger" [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.countDidntPay" for="field_countDidntPay">Count Didnt Pay</label>
+            <input
+              type="number"
+              class="form-control"
+              min="0"
+              name="countDidntPay"
+              id="field_countDidntPay"
+              data-cy="countDidntPay"
+              (input)="formatInput($any($event).target)"
+              formControlName="countDidntPay"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.countDidntPay" for="field_countDidntPay">Count Didnt Pay</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                min="0"
+                name="didntPay"
+                id="field_didntPay"
+                data-cy="didntPay"
+                (input)="formatInput($any($event).target)"
+                formControlName="didntPay"
+              />
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input
+                    style="margin: 5px"
+                    type="checkbox"
+                    name="isPaid"
+                    id="field_isPaid"
+                    data-cy="isPaid"
+                    (change)="fieldsIsPaid($event)"
+                    [checked]="true"
+                    formControlName="isPaid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.guestInstitution" for="field_guestInstitution">Guest Institution</label>
+            <textarea
+              class="form-control"
+              name="guestInstitution"
+              id="field_guestInstitution"
+              data-cy="guestInstitution"
+              formControlName="guestInstitution"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label" jhiTranslate="guestApp.guest.responsible" for="field_responsible">Responsible</label>
+            <textarea
+              class="form-control"
+              name="responsible"
+              id="field_responsible"
+              data-cy="responsible"
+              formControlName="responsible"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="guestApp.guest.explanation" for="field_explanation">Explanation</label>
+          <textarea
+            class="form-control"
+            name="explanation"
+            id="field_explanation"
+            data-cy="explanation"
+            formControlName="explanation"
+            rows="5"
+          ></textarea>
+        </div>
+        <!-- <table class="table mb-4">
+          <thead>
+            <tr>
+              <th class="name-header" jhiTranslate="guestApp.guest.countPerson">Name</th>
+              <th class="gender-header">Төлөбөдү</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container formArrayName="putAways">
+              <ng-container [formGroupName]="i" *ngFor="let putAway of putAways.controls; let i = index">
+                <tr *ngIf="!putAway.get('isDelete')?.value" style="border-top: 1px solid">
+                  <input type="text" class="form-control" style="display: none" formControlName="id" [readonly]="true" />
+                  <td>
+                    <input 
+                      class="form-control" 
+                      min="0" type="number" 
+                      formControlName="countPerson" 
+                      (input)="formatInput($any($event).target)"
+                      placeholder="Enter user name" />
+                  </td>
+                  <td>
+                    <input
+                      id="field_whenLeft"
+                      data-cy="whenLeft"
+                      type="datetime-local"
+                      class="form-control"
+                      name="whenLeft"
+                      formControlName="whenLeft"
+                      placeholder="YYYY-MM-DD HH:mm"
+                    />
+                  </td>
+                  <td>
+                    <button (click)="removeFormArray(i, 'putAways')" type="button" class="btn btn-danger" data-cy="entityDeleteButton">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-trash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                        />
+                        <path
+                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                        />
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-info" (click)="addFormArray(i, false)">
+                      <fa-icon icon="plus"></fa-icon>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <textarea
+                      class="form-control"
+                      type="text"
+                      formControlName="explanation"
+                      placeholder="Enter contact number"
+                      rows="2"
+                    ></textarea>
+                  </td>
+                </tr>
+              </ng-container>
+            </ng-container>
+          </tbody>
+        </table> -->
+        <h4 style="text-align: right">Байланыш</h4>
+        <hr />
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="name-header" jhiTranslate="guestApp.guest.name">Name</th>
+              <th class="gender-header">Телефон</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container formArrayName="contacts">
+              <ng-container *ngFor="let contact of contacts.controls; let i = index">
+                <tr [formGroupName]="i" *ngIf="!contact.get('isDelete')?.value">
+                  <input type="text" style="display: none" class="form-control" formControlName="id" [readonly]="true" />
+                  <td>
+                    <input class="form-control" type="text" formControlName="name" placeholder="Enter user name" />
+                  </td>
+                  <td>
+                    <input class="form-control" type="text" formControlName="phone" placeholder="Enter contact number" />
+                  </td>
+                  <td>
+                    <button (click)="removeFormArray(i, 'contacts')" type="button" class="btn btn-danger" data-cy="entityDeleteButton">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-trash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                        />
+                        <path
+                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                        />
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-info" (click)="addFormArray(i, true)">
+                      <fa-icon icon="plus"></fa-icon>
+                    </button>
+                  </td>
+                </tr>
+              </ng-container>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <!-- type="submit" -->
+        <button
+          *ngIf="!guest?.isArchive"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

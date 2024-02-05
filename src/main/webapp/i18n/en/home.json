@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "Кош келиңиз, Java Hipster!",
+    "subtitle": "Бул сиздин башкы баракчаңыз",
+    "logged": {
+      "message": "Сиз колдонуучу катары кирдиңиз \"{{username}}\"."
+    },
+    "question": "JHipster боюнча кандайдыр бир сурооңуз болсо:",
+    "link": {
+      "homepage": "JHipster башкы бети",
+      "stackoverflow": "JHipster Stack Overflow боюнча",
+      "bugtracker": "JHipster мүчүлүштүктөрдү көзөмөлдөөчү",
+      "chat": "JHipster коомдук чат бөлмөсү",
+      "follow": "Twitterде @jhipsterди ээрчи"
+    },
+    "like": "Эгер сизге JHipster жакса, бизге жылдыз берүүнү унутпаңыз",
+    "github": "GitHub"
+  }
+}

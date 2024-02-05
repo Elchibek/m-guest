@@ -1,0 +1,27 @@
+{
+  "guestApp": {
+    "floor": {
+      "home": {
+        "title": "Floors",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Floor",
+        "createOrEditLabel": "Создать или отредактировать Floor",
+        "notFound": "Floors не найдено"
+      },
+      "created": "Новый Floor создан с идентификатором {{ param }}",
+      "updated": "Floor обновлен с идентификатором {{ param }}",
+      "deleted": "Floor удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Floor {{ id }}?"
+      },
+      "detail": {
+        "title": "Floor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numFloor": "Num Floor",
+      "backgroundColor": "Background Color",
+      "entrance": "Entrance"
+    }
+  }
+}

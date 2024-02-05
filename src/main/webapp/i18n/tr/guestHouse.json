@@ -1,0 +1,28 @@
+{
+  "guestApp": {
+    "guestHouse": {
+      "home": {
+        "title": "Guest Houses",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Guest House ekle",
+        "createOrEditLabel": "Yeni Guest House ekle veya guncelle",
+        "notFound": "Guest Houses kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Guest House eklendi",
+      "updated": "{{ param }} nolu Guest House guncellendi",
+      "deleted": "{{ param }} nolu Guest House silindi",
+      "delete": {
+        "question": "{{ id }} nolu Guest House silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Guest House"
+      },
+      "id": "ID",
+      "name": "Name",
+      "isEmpty": "Is Empty",
+      "countPerson": "Count Person",
+      "backgroundColor": "Background Color",
+      "floor": "Floor"
+    }
+  }
+}

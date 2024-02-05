@@ -1,0 +1,42 @@
+{
+  "guestApp": {
+    "guest": {
+      "home": {
+        "title": "Guests",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Guest",
+        "createOrEditLabel": "Créer ou éditer un Guest",
+        "notFound": "Aucun Guest trouvé"
+      },
+      "created": "Un nouveau Guest a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Guest avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Guest avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Guest {{ id }} ?"
+      },
+      "detail": {
+        "title": "Guest"
+      },
+      "id": "ID",
+      "name": "Name",
+      "guestInstitution": "Guest Institution",
+      "responsible": "Responsible",
+      "isArchive": "Is Archive",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "countDidntPay": "Count Didnt Pay",
+      "paid": "Paid",
+      "countPerson": "Count Person",
+      "explanation": "Explanation",
+      "price": "Price",
+      "totalPrice": "Total Price",
+      "restOfTheDay": "Rest Of The Day",
+      "putAway": "Put Away",
+      "guestBlock": "Guest Block",
+      "entrance": "Entrance",
+      "floor": "Floor",
+      "guestHouse": "Guest House",
+      "guestFrom": "Guest From"
+    }
+  }
+}

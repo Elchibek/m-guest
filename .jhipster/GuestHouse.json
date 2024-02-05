@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072859",
+  "dto": "mapstruct",
+  "entityTableName": "guest_house",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "isEmpty",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "countPerson",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "backgroundColor",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "GuestHouse",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "floor",
+      "relationshipName": "floor",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

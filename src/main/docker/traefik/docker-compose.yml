@@ -1,0 +1,28 @@
+# docker network create proxy
+# mkdir -p /opt/guestdata/traefik
+# touch /opt/guestdata/traefik/acme.json; chmod 600 /opt/guestdata/traefik/acme.json
+
+version: '3'
+services:
+  traefik:
+    container_name: traefik
+    image: traefik:v2.10
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # ro = read-only access to the docker.sock
+      - /opt/guestdata/traefik/:/etc/traefik/
+    networks:
+      - proxy # rename this to your custom docker network
+    labels:
+      traefik.http.routers.api.rule: Host(`traefik.docker.localhost`) # Define the subdomain for the traefik dashboard.
+      traefik.http.routers.api.entryPoints: https # Set the Traefik entry point.
+      traefik.http.routers.api.service: api@internal # Enable Traefik API.
+      traefik.enable: true # Enable Traefik reverse proxy for the Traefik dashboard.
+    restart: unless-stopped
+
+networks:
+  proxy: # rename this to your custom docker network.
+    driver: bridge
+    external: true

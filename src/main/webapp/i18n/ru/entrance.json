@@ -1,0 +1,26 @@
+{
+  "guestApp": {
+    "entrance": {
+      "home": {
+        "title": "Entrances",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Entrance",
+        "createOrEditLabel": "Создать или отредактировать Entrance",
+        "notFound": "Entrances не найдено"
+      },
+      "created": "Новый Entrance создан с идентификатором {{ param }}",
+      "updated": "Entrance обновлен с идентификатором {{ param }}",
+      "deleted": "Entrance удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Entrance {{ id }}?"
+      },
+      "detail": {
+        "title": "Entrance"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numEntrance": "Num Entrance",
+      "guestBlock": "Guest Block"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205072959",
+  "dto": "mapstruct",
+  "entityTableName": "guest_from",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "GuestFrom",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

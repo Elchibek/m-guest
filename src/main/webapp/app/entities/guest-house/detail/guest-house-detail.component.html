@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="guestHouse">
+      <h2 data-cy="guestHouseDetailsHeading"><span jhiTranslate="guestApp.guestHouse.detail.title">Guest House</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ guestHouse.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="guestApp.guestHouse.name">Name</span></dt>
+        <dd>
+          <span>{{ guestHouse.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="guestApp.guestHouse.isEmpty">Is Empty</span></dt>
+        <dd>
+          <span>{{ guestHouse.isEmpty }}</span>
+        </dd>
+        <dt><span jhiTranslate="guestApp.guestHouse.countPerson">Count Person</span></dt>
+        <dd>
+          <span>{{ guestHouse.countPerson }}</span>
+        </dd>
+        <dt><span jhiTranslate="guestApp.guestHouse.backgroundColor">Background Color</span></dt>
+        <dd>
+          <span>{{ guestHouse.backgroundColor }}</span>
+        </dd>
+        <dt><span jhiTranslate="guestApp.guestHouse.floor">Floor</span></dt>
+        <dd>
+          <div *ngIf="guestHouse.floor">
+            <a [routerLink]="['/floor', guestHouse.floor.id, 'view']">{{ guestHouse.floor.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/guest-house', guestHouse.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+{
+  "guestApp": {
+    "guest": {
+      "home": {
+        "title": "Коноктор",
+        "refreshListLabel": "Тизмени жаңылоо",
+        "createLabel": "Жаңы конок түзүңүз",
+        "createOrEditLabel": "Конокту түзүү же түзөтүү",
+        "notFound": "Коноктор табылган жок"
+      },
+      "filter": {
+        "paid": "Төлөнгөн",
+        "unpaid": "Төлөнбөгөн",
+        "from": "Эң аз",
+        "before": "Эң көп"
+      },
+      "selectAll": "Баарын танда",
+      "created": "Жаңы конок түзүлдү",
+      "updated": "Конок жаңыртылды",
+      "deleted": "Конок жок кылынды",
+      "delete": {
+        "question": "Конокту чын эле жок кылгыңыз келеби?"
+      },
+      "archive": {
+        "question": "Конокту чын эле архивдештиргиниз келеби?"
+      },
+      "detail": {
+        "title": "Коноктор"
+      },
+      "id": "ID",
+      "name": "Аты",
+      "guestInstitution": "Конок мекеме",
+      "responsible": "Жооптуу",
+      "isArchive": "Архив",
+      "startDate": "Келген күнү",
+      "endDate": "Кеткен күнү",
+      "countDidntPay": "Сан төлөгөн жок",
+      "paid": "Төлөндү",
+      "countPerson": "Конок саны",
+      "explanation": "Түшүндүрмө",
+      "price": "Баасы",
+      "totalPrice": "Жалпы суммасы",
+      "restOfTheDay": "Калган күнү",
+      "putAway": "Алып сал",
+      "guestBlock": "Блок",
+      "entrance": "Кире бериш",
+      "floor": "Кабат",
+      "guestHouse": "Конок үй",
+      "guestFrom": "Келген конок",
+      "createdBy": "Түзүлгөн"
+    }
+  }
+}

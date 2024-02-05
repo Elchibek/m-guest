@@ -1,0 +1,19 @@
+{
+  "login": {
+    "title": "Кирүү",
+    "form": {
+      "password": "Сырсөз",
+      "password.placeholder": "Сырсөз",
+      "rememberme": "Мени эстеп кал",
+      "button": "Кирүү"
+    },
+    "messages": {
+      "error": {
+        "authentication": "<strong>Кирүү ишке ашкан жок!</strong> Сураныч, эсептик дайындарыңызды текшерип, кайра аракет кылыңыз."
+      }
+    },
+    "password": {
+      "forgot": "Сырсөзүңүздү унутуп калдыңызбы?"
+    }
+  }
+}

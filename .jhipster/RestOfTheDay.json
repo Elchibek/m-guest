@@ -1,0 +1,26 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205073159",
+  "dto": "mapstruct",
+  "entityTableName": "rest_of_the_day",
+  "fields": [
+    {
+      "fieldName": "willStay",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "num",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeparture",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "RestOfTheDay",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

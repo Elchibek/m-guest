@@ -1,0 +1,27 @@
+{
+  "guestApp": {
+    "floor": {
+      "home": {
+        "title": "Floors",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Floor ekle",
+        "createOrEditLabel": "Yeni Floor ekle veya guncelle",
+        "notFound": "Floors kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Floor eklendi",
+      "updated": "{{ param }} nolu Floor guncellendi",
+      "deleted": "{{ param }} nolu Floor silindi",
+      "delete": {
+        "question": "{{ id }} nolu Floor silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Floor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numFloor": "Num Floor",
+      "backgroundColor": "Background Color",
+      "entrance": "Entrance"
+    }
+  }
+}

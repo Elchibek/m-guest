@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20231205073259",
+  "dto": "mapstruct",
+  "entityTableName": "put_away",
+  "fields": [
+    {
+      "fieldName": "countPerson",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "whenLeft",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isAll",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "explanation",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "PutAway",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "guest",
+      "otherEntityRelationshipName": "putAway",
+      "relationshipName": "guest",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
